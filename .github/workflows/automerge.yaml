@@ -16,8 +16,8 @@ jobs:
       uses: actions/setup-go@98f2ad02fd48d057ee3b4d4f66525b231c3e52b6 # v3.1.2
       with:
         python-version: 3.x
-      run: pip install -r requirements.txt
 
     - name: Validate Contributor JSON Files
       run: |
+        pip install -r requirements.txt
         python ci/validate.py 
