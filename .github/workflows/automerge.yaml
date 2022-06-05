@@ -6,18 +6,33 @@ on:
       - 'contributors/*'
 
 jobs:
-  automerge:
+  validate:
     runs-on: ubuntu-latest
+    outputs:
+      automerge: ${{ steps.validate.outputs.merge }}
     steps:
     - name: Checkout
       uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
 
     - name: Set up Python
-      uses: actions/setup-go@98f2ad02fd48d057ee3b4d4f66525b231c3e52b6 # v3.1.2
+      uses: actions/setup-python@98f2ad02fd48d057ee3b4d4f66525b231c3e52b6 # v3.1.2
       with:
         python-version: 3.x
 
     - name: Validate Contributor JSON Files
+      id: validate
       run: |
-        pip install -r requirements.txt
-        python ci/validate.py 
+        python ci/validate.py
+
+  automerge:
+    runs-on: ubuntu-latest
+    needs: validate
+    # if: needs.validate.outputs.automerge == true
+    steps:
+    - name: Echo needs
+      run: echo ${{ needs.validate.outputs }}
+    - name: Auto-Merge Pull Request
+      uses: pascalgn/automerge-action@v0.15.3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MERGE_LABELS: ""
