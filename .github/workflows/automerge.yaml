@@ -27,10 +27,8 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
     needs: validate
-    # if: needs.validate.outputs.automerge == true
+    if: ${{ needs.validate.outputs.automerge == 'true' }}
     steps:
-    - name: Echo needs
-      run: echo ${{ needs.validate.outputs }}
     - name: Auto-Merge Pull Request
       uses: pascalgn/automerge-action@v0.15.3
       env:
