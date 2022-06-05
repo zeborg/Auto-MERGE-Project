@@ -6,8 +6,10 @@ on:
       - 'contributors/*'
 
 jobs:
-  automerge:
+  validate:
     runs-on: ubuntu-latest
+    outputs:
+      automerge: ${{ steps.validate.outputs.merge }}
     steps:
     - name: Checkout
       uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
@@ -18,6 +20,16 @@ jobs:
         python-version: 3.x
 
     - name: Validate Contributor JSON Files
+      id: validate
       run: |
-        echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
-        python ci/validate.py ${{ github.event.pull_request.number }}
+        python ci/validate.py
+
+  automerge:
+    runs-on: ubuntu-latest
+    needs: validate
+    if: needs.validate.outputs.merge == true
+    steps:
+    - name: Auto-Merge Pull Request
+      uses: pascalgn/automerge-action@v0.15.3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
