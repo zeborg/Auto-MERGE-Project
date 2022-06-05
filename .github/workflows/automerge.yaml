@@ -20,4 +20,4 @@ jobs:
     - name: Validate Contributor JSON Files
       run: |
         echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
-        python ci/validate.py ${{ github.event.pull_request.base.ref }}
+        python ci/validate.py ${{ github.event.pull_request.number }}

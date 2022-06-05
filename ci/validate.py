@@ -9,10 +9,10 @@ for f in files:
         jsonfile = json.loads(fh.read())
         if sorted(list(jsonfile.keys())) == ['about', 'batch', 'course', 'institution', 'name', 'skills_hobbies']:
             os.system("""
-            curl \
-            -X POST \
+            gh api \
+            --method PUT \
             -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/zeborg/Auto-MERGE-Project/merges \
-            -d '{"base":"main","head":"%s","commit_message":"Shipped cool_feature!"}'""" % sys.argv[0])
+            /repos/zeborg/Auto-MERGE-Project/pulls/%d/merge
+            """ % sys.argv[0])
         else:
             sys.exit(f"'{'contributors/'+f}' is either missing one or more required keys, or contains inappropriate keys.")
