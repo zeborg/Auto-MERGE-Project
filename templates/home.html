@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" type="image/svg+xml" href="{{ url_for('static', filename='icon.svg') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400&display=swap" rel="stylesheet">
+
+    <title>:: Auto-MERGE Project ::</title>
+  </head>
+
+  <body>
+    <div class="text-light">
+        <div class="h1 shadow-lg jumbotron jumbotron-fluid jbtn text-center display-4 pt-5 pb-0">
+            <div class="d-flex justify-content-center align-items-center mb-4">
+                <img class="text-danger" src="{{url_for('static', filename='merge.svg')}}" width="60px" draggable="false">
+                <div class="ml-3 disabled">Auto-MERGE Project</div>
+            </div>
+            <ul class="nav nav-tabs py-2 justify-content-center nav-bg" style="font-size: 20px" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="px-2 text-warning" id="contributors-tab" data-toggle="tab" href="#contributors" role="tab" aria-controls="contributors" aria-selected="true">Contributors</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="px-2 text-warning" id="howto-tab" data-toggle="tab" href="#howto" role="tab" aria-controls="how-to" aria-selected="false">How-to</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="px-2 text-warning" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="d-flex justify-content-center flex-wrap">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="contributors" role="tabpanel" aria-labelledby="contributors-tab">
+                    <div class="mx-auto px-3 py-2 mb-5 rounded text-light" style="background: #0008; width: fit-content; font-size: 18px">Total contributors: <span style="color: rgb(150,255,150)">{{count}}</span></div>
+                    <div class="d-flex justify-content-center flex-wrap">
+                        {{astring|safe}}
+                    </div>
+                </div>
+                <div class="tab-pane fade bg-light rounded p-4" id="howto" role="tabpanel" aria-labelledby="howto-tab">
+                    <h6 class="text-center font-weight-bold">To contribute here, please follow the steps below:</h6>
+                    <ol class="py-2">
+                        <li class="py-1">
+                            <span>Login to GitHub and visit <a href="https://github.com/zeborg/auto-merge-project" target="_blank">Auto-MERGE Project's GitHub repository</a></span>
+                        </li>
+                        <li class="py-1">
+                            <span><b>Fork</b> the repository into your GitHub account.</a></span>
+                        </li>
+                        <li class="py-1">
+                            <span>
+                                In the forked repository, create a new file with <b><code>.json</code></b> format in the <b><code>contributors</code></b> folder with your <b>GitHub username as the filename</b>.<br>
+                                For example, if my username is <b><code>zeborg</code></b>, then my contributor filename will be <b><code>zeborg.json</code></b>.
+                            </span>
+                        </li>
+                        <li class="py-1">
+                            <span>
+                                Copy and paste the following code in the file:<br>
+                                <span class="d-flex justify-content-center">
+                                    <b><pre class="text-left">
+                                        <code>
+{
+    "name": "<span class="bg-warning px-1">MY FULL NAME</span>",
+    "course": "<span class="bg-warning px-1">MY COURSE NAME (Eg. B.Tech CSE)</span>",
+    "batch": "<span class="bg-warning px-1">MY BATCH YEAR (Eg. 2019-23)</span>",
+    "institution": "<span class="bg-warning px-1">MY COLLEGE/UNIVERSITY'S NAME</span>",
+    "skills_hobbies": ["<span class="bg-warning px-1">SKILL 1</span>", "<span class="bg-warning px-1">SKILL 2</span>", "<span class="bg-warning px-1">SKILL 3</span>", "<span class="bg-warning px-1">HOBBY 1</span>", "<span class="bg-warning px-1">HOBBY 2</span>"],
+    "about": "<span class="bg-warning px-1">A FEW LINES ABOUT ME</span>"
+}</code></pre></b>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="py-1">
+                            <span>
+                                Replace the highlighted content according to your own details. For example, my details would look like:<br>
+                                <span class="d-flex justify-content-center">
+                                    <b><pre class="text-left">
+                                        <code>
+{
+    "name": "<span class="bg-success text-light px-1">Abhinav Sinha</span>",
+    "course": "<span class="bg-success text-light px-1">B.Tech CSE</span>",
+    "batch": "<span class="bg-success text-light px-1">2019-23</span>",
+    "institution": "<span class="bg-success text-light px-1">K.R. Mangalam University</span>",
+    "skills_hobbies": ["<span class="bg-success text-light px-1">Python</span>", "<span class="bg-success text-light px-1">C++</span>", "<span class="bg-success text-light px-1">HTML/CSS/JS</span>", "<span class="bg-success text-light px-1">Selenium Automation</span>", "<span class="bg-success text-light px-1">Reading</span>", "<span class="bg-success text-light px-1">PC Gaming</span>"],
+    "about": "<span class="bg-success text-light px-1">I like tea.</span>"
+}</code></pre></b>
+                            </span>
+                        </li>
+                        <li class="py-1">
+                            <span>
+                                Commit the changes.
+                            </span>
+                        </li>
+                        <li class="py-1">
+                            <span>
+                                Add your profile picture in the <b><code>/static/avatars</code></b> folder with your <b>GitHub username as the filename</b>.<br>
+                                For example, if my profile picture is of <b><code>.jpg</code></b> format, then the filename would be <b><code>zeborg.jpg</code></b>.<br>
+                            </span>
+                        </li>
+                        <li class="py-1">
+                            <span>
+                                Commit the changes.
+                            </span>
+                        </li>
+                        <li class="py-1">
+                            <span>
+                                Create a pull request from the forked repository to complete your contribution.
+                            </span>
+                        </li>
+                    </ol>
+                </div>
+                <div class="tab-pane fade bg-light rounded p-4" id="about" role="tabpanel" aria-labelledby="about-tab">
+                    <h6 class="text-center font-weight-bold">An initiative to encourage Open-Source contribution by students.</h6>
+                    <div class="mt-4">If you're a total newbie to open-source contribution, check out:</div>
+                    <ul class="py-2" style="list-style-type:square">
+                        <li>
+                            <a href="https://www.firsttimersonly.com" target="_blank">firsttimersonly.com</a>
+                        </li>
+                    </ul>
+                    <div class="mt-3">To find beginner-friendly open-source projects, check out:</div>
+                    <ul class="py-2" style="list-style-type:square">
+                        <li>
+                            <a href="https://www.goodfirstissue.dev" target="_blank">goodfirstissue.dev</a>
+                        </li>
+                        <li>
+                            <a href="https://goodfirstissues.com" target="_blank">goodfirstissues.com</a>
+                        </li>
+                        <li>
+                            <a href="https://up-for-grabs.net" target="_blank">up-for-grabs.net</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{bstring|safe}}
+
+    <div class="footer-float shadow-lg text-light text-center d-flex justify-content-center align-items-center">
+        <div>
+            Crafted with <span class="text-danger">&hearts;</span> by <a href="https://github.com/zeborg" target="_blank" class="text-warning">Abhinav Sinha</a>
+        </div>
+    </div>
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+  </body>
+</html>

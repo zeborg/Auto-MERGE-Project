@@ -1,0 +1,46 @@
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+body {
+    padding-bottom: 80px;
+    background: url('bg.jpg');
+    font-family: 'Exo', sans-serif
+}
+
+.jbtn {
+    background: linear-gradient(-30deg, #38007d, #440a67, #7827db, #53008a);
+	background-size: 300% 300%;
+	animation: gradient 10s ease infinite normal;
+}
+
+.footer-float {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(-30deg, #38007d, #440a67, #7827db, #53008a);
+	background-size: 300% 300%;
+	animation: gradient 10s ease infinite normal;
+}
+
+.translucent {
+    opacity: 1.0;
+}
+
+.translucent:hover {
+    opacity: 0.75;
+}
+
+.nav-bg {
+    background: #0004;
+}
