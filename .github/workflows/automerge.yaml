@@ -21,4 +21,4 @@ jobs:
       run: |
         echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
         pip install -r requirements.txt
-        python ci/validate.py ${{ github.event.pull_request.number }}
+        python ci/validate.py ${{ github.sha }}
