@@ -23,4 +23,5 @@ jobs:
         pip install -r requirements.txt
         python ci/validate.py ${{ github.event.number }}
       env:
+        GITHUB_TOKEN:
         GH_TOKEN: $
