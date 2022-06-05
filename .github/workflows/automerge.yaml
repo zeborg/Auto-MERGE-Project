@@ -18,8 +18,8 @@ jobs:
         python-version: 3.x
 
     - name: Clear GITHUB_TOKEN
-     run:  export GITHUB_TOKEN=
-     
+      run:  export GITHUB_TOKEN=
+
     - name: Validate Contributor JSON Files
       run: |
         gh auth login
