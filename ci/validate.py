@@ -12,7 +12,7 @@ for f in files:
             gh api \
             --method PUT \
             -H "Accept: application/vnd.github.v3+json" \
-            /repos/zeborg/Auto-MERGE-Project/pulls/%d/merge
+            /repos/zeborg/Auto-MERGE-Project/pulls/%s/merge
             """ % sys.argv[0])
         else:
             sys.exit(f"'{'contributors/'+f}' is either missing one or more required keys, or contains inappropriate keys.")
