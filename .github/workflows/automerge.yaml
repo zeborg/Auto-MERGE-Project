@@ -19,5 +19,6 @@ jobs:
 
     - name: Validate Contributor JSON Files
       run: |
+        gh auth login --with-token ${{ secrets.GITHUB_TOKEN }}
         pip install -r requirements.txt
         python ci/validate.py 
