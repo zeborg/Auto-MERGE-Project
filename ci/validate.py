@@ -11,5 +11,5 @@ for f in files:
             continue
         else:
             print("::set-output name=merge::false")
-            sys.exit(f"'{'contributors/'+f}' is either missing one or more required keys, or contains inappropriate keys.")
+            sys.exit(f"'{'contributors/'+f}' is either missing one or more required keys, or contains inappropriate keys. Expected keys {['about', 'batch', 'course', 'institution', 'name', 'skills_hobbies']}, got keys {sorted(list(jsonfile.keys()))}.")
 print("::set-output name=merge::true")
