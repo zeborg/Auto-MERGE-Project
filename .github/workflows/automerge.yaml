@@ -4,6 +4,7 @@ on:
       - 'main'
     paths:
       - 'contributors/*'
+      - 'static/avatars/*'
 
 jobs:
   validate:
