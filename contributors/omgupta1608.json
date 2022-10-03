@@ -1,0 +1,8 @@
+{
+    "name": "Om Gupta",
+    "course": "BCA",
+    "batch": "2019-22",
+    "institution": "Maharaja Surajmal Institute, GGSIPU",
+    "skills_hobbies": ["NodeJs", "Golang", "GraphQL", "Reading", "Playing Drums"],
+    "about": "I like learning something new everyday."
+}
