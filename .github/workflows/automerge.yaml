@@ -1,5 +1,5 @@
 on:
-  pull_request:
+  pull_request_target:
     types:
       - labeled
       - unlabeled
@@ -48,7 +48,5 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MERGE_LABELS: ""
-        UPDATE_LABELS: ""
         MERGE_FORKS: true
         MERGE_ERROR_FAIL: true
-        LOG: "TRACE"
