@@ -4,11 +4,11 @@
 
 1) Login to GitHub and visit [Auto-MERGE Project's GitHub repository](https://github.com/zeborg/Auto-MERGE-Project)
 2) **Fork** the repository into your GitHub account.
-3) In the forked repository, create a new file with <span style="color:rgba(233,63,140,255)">.json</span> format in the <span style="color:rgba(233,63,140,255)">contributors</span> folder with your **GitHub username as the filename**. <br>For example, if my username is <span style="color:rgba(233,63,140,255)">.zeborg</span>, then my contributor filename will be  <span style="color:rgba(233,63,140,255)">zeborg.json</span>.
+3) In the forked repository, create a new file with `<span style="color:rgba(233,63,140,255)">.json</span>` format in the <span style="color:rgba(233,63,140,255)">contributors</span> folder with your **GitHub username as the filename**. <br>For example, if my username is <span style="color:rgba(233,63,140,255)">.zeborg</span>, then my contributor filename will be  <span style="color:rgba(233,63,140,255)">zeborg.json</span>
 4) Copy and paste the following code in the file:<br>
 ```json 
 {
-     "name": "MY FULL NAME",
+     "name": "MY FULL NAME </span>",
     "course": "MY COURSE NAME (Eg. B.Tech CSE)",
     "batch": "MY BATCH YEAR (Eg. 2019-23)",
     "institution": "MY COLLEGE/UNIVERSITY'S NAME",
