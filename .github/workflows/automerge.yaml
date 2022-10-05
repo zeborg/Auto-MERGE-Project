@@ -44,6 +44,8 @@ jobs:
     #     do-not-merge-labels: never-merge
     #     required-labels: ""
     #     pull-request: ${{ github.event.inputs.pull-request }}
+      - name: Checkout
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
       - name: Merge PR
         run: gh pr merge ${{ github.event.number }}
         env:
