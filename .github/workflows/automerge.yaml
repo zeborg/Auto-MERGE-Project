@@ -47,6 +47,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
       - name: Merge PR
-        run: gh pr merge ${{ github.event.number }}
+        run: gh pr merge ${{ github.event.number }} -m
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
