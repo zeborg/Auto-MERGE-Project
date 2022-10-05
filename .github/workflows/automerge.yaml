@@ -46,3 +46,5 @@ jobs:
     #     pull-request: ${{ github.event.inputs.pull-request }}
       - name: Merge PR
         run: gh pr merge ${{ github.event.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
