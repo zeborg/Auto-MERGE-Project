@@ -4,11 +4,11 @@
 
 1) Login to GitHub and visit [Auto-MERGE Project's GitHub repository](https://github.com/zeborg/Auto-MERGE-Project)
 2) **Fork** the repository into your GitHub account.
-3) In the forked repository, create a new file with `<span style="color:rgba(233,63,140,255)">.json</span>` format in the <span style="color:rgba(233,63,140,255)">contributors</span> folder with your **GitHub username as the filename**. <br>For example, if my username is <span style="color:rgba(233,63,140,255)">.zeborg</span>, then my contributor filename will be  <span style="color:rgba(233,63,140,255)">zeborg.json</span>
+3) In the forked repository, create a new file with `.json` format in the ***contributors*** folder with your **GitHub username as the filename**. <br>For example, if my username is `.zeborg`, then my contributor filename will be `zeborg.json`
 4) Copy and paste the following code in the file:<br>
 ```json 
 {
-     "name": "MY FULL NAME </span>",
+     "name": "MY FULL NAME",
     "course": "MY COURSE NAME (Eg. B.Tech CSE)",
     "batch": "MY BATCH YEAR (Eg. 2019-23)",
     "institution": "MY COLLEGE/UNIVERSITY'S NAME",
@@ -28,8 +28,7 @@
 }
 ```
 6) Commit the changes.
-7) Add your profile picture in the <span style="color:rgba(233,63,140,255)">/static/avatars</span> folder with your **GitHub username as the filename**.<br>
-For example, if my profile picture is of <span style="color:rgba(233,63,140,255)">.jpg</span> format, then the filename would be <span style="color:rgba(233,63,140,255)">zeborg.jpg</span>.
+7) Add your profile picture in the ***/static/avatars*** folder with your **GitHub username as the filename**.<br>
+For example, if my profile picture is of `.jpg` format, then the filename would be `zeborg.jpg`
 8) Commit the changes.
 9) Create a pull request from the forked repository to complete your contribution
-
