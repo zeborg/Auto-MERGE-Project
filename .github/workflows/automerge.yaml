@@ -30,22 +30,9 @@ jobs:
     needs: validate
     if: ${{ needs.validate.outputs.automerge == 'true' }}
     steps:
-    # - name: Auto-Merge Pull Request
-    #   uses: pascalgn/automerge-action@v0.15.3
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #     MERGE_LABELS: ""
-    #     MERGE_FORKS: true
-    #     MERGE_ERROR_FAIL: true
-    # - uses: reitermarkus/automerge@2b969eaa87a9b9f598d5a8931f78d062e94848ba # v2.1.2
-    #   with:
-    #     token: ${{ secrets.GITHUB_TOKEN }}
-    #     merge-method: rebase
-    #     do-not-merge-labels: never-merge
-    #     required-labels: ""
-    #     pull-request: ${{ github.event.inputs.pull-request }}
       - name: Checkout
         uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
+        
       - name: Merge PR
         run: gh pr merge ${{ github.event.number }} -m
         env:
